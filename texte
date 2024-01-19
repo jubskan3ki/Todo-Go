@@ -1,0 +1,38 @@
+Todo-Go/
+│
+├── docker-compose.yml
+├── Dockerfile
+├── go.mod
+├── go.sum
+├── main.go
+├── README.md
+│
+├── app/
+│   │
+│   ├── config/
+│   │   └── config.go
+│   │
+│   ├── auth/
+│   │   └── auth.go
+│   │
+│   ├── api/
+│   │   ├── todo_handlers.go
+│   │   └── auth_handlers.go
+│   │
+│   ├── middleware/
+│   │   ├── auth.go
+│   │   └── logger.go
+│   │
+│   ├── routes/
+│   │   ├── auth_routes.go
+│   │   └── todo_routes.go
+│   │
+│   ├── model/
+│   │   ├── todo.go
+│   │   └── user.go
+│   │
+│   └── db/
+│       └── db.go
+│
+└── database/
+    └── init.sql

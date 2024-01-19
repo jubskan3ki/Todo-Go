@@ -5,12 +5,15 @@ ENV CGO_ENABLED=0
 
 WORKDIR /app
 
-COPY ./app .
+COPY ./go.mod ./
+COPY ./go.sum ./
 
-RUN go mod download \
-    && go mod verify \
-    && go build -o /build/buildedApp main.go
+RUN go mod download && go mod verify
+
+COPY . .
+
+RUN go build -o /build/buildedApp ./main.go
 
 WORKDIR /build
-ENTRYPOINT [ "./buildedApp" ]
-    
+
+ENTRYPOINT ["./buildedApp"]
